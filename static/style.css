@@ -1,6 +1,6 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f2f5;
+  background: linear-gradient(to right, #87b3f8, #cfe2ff, #87b3f8);
   color: #333;
   margin: 40px;
   display: flex;
@@ -15,12 +15,14 @@ h1 {
 
 form {
   width: 320px;
-  background: white;
+  background: rgba(255, 255, 255, 0.15);
   padding: 25px 30px;
   border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  border: 2px solid #007acc;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
+
 
 /* Tablette */
 @media (min-width: 600px) {
@@ -48,7 +50,7 @@ textarea {
   width: 100%;
   padding: 8px 12px;
   font-size: 16px;
-  border: 1.5px solid #ccc;
+  border: 1.5px solid #015b97;
   border-radius: 5px;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
@@ -61,30 +63,43 @@ textarea:focus {
 }
 
 input[type="radio"] {
+  accent-color: #89b3f8;
   margin-right: 8px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+input[type="radio"] + span {
+  font-size: 15px;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
 }
 
 button.submit-button {
   margin-top: 25px;
-  background-color: #007acc;
+  background: linear-gradient(to right, #015b97, #007acc);
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   width: 100%;
 }
 
 button.submit-button:hover {
-  background-color: #005fa3;
+  background: linear-gradient(to right, #007acc, #015b97);
+  transform: scale(1.05);
 }
 
 pre {
   margin-top: 30px;
-  background: #222;
-  color: #eee;
+  background: rgba(255, 255, 255, 0.15);
+  color: #015b97;
   padding: 20px;
   border-radius: 8px;
   width: 100%;
@@ -92,7 +107,12 @@ pre {
   overflow-x: auto;
   font-family: monospace;
   font-size: 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Style Error Page */
 
@@ -111,7 +131,7 @@ pre {
 .statusCode {
   font-size: 6rem;
   font-weight: bold;
-  color: #f44336;
+  color: #015b97;
   margin: 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -125,20 +145,23 @@ pre {
 
 .btnBack {
   text-decoration: none;
-  padding: 12px 24px;
-  background-color: #007acc;
+  padding: 12px 24px; /* garde ta dimension actuelle */
+  background: linear-gradient(to right, #015b97, #007acc);
+  color: white;
   border: none;
   border-radius: 6px;
-  color: white;
   font-size: 1rem;
   font-weight: 500;
-  transition: background-color 0.3s ease;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  /* pas de width ici, on garde la taille naturelle */
 }
 
 .btnBack:hover {
-  background-color: #005fa3;
+  background: linear-gradient(to right, #007acc, #015b97);
+  transform: scale(1.05);
 }
+
 
 .errorImage {
   max-width: 180px;
